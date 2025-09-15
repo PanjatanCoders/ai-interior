@@ -1,0 +1,298 @@
+<section id="portfolio" class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-label">Our Portfolio</span>
+            <h2 class="section-title">
+                Recent Projects &<br>
+                <span class="text-primary">Success Stories</span>
+            </h2>
+            <p class="section-description">
+                Explore our latest interior design projects showcasing innovative solutions 
+                and exceptional craftsmanship across different spaces.
+            </p>
+        </div>
+        
+        <!-- Portfolio Filters -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="residential">Homes</button>
+            <button class="filter-btn" data-filter="commercial">Offices</button>
+            <button class="filter-btn" data-filter="retail">Shops</button>
+            <button class="filter-btn" data-filter="renovation">Renovations</button>
+        </div>
+        
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid" id="portfolio-grid">
+            <!-- Residential Project 1 -->
+            <div class="portfolio-item" data-category="residential">
+                <div class="portfolio-image">
+                    <img src="assets/images/portfolio/residential-1.jpg" 
+                         alt="Modern 3BHK apartment interior design in Kolkata" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h4>Modern 3BHK Apartment</h4>
+                            <p>Contemporary design with traditional touches</p>
+                            <div class="portfolio-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Salt Lake, Kolkata</span>
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button class="btn btn-sm btn-outline" onclick="openPortfolioModal('residential-1')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="openImageGallery('residential-1')">
+                                    <i class="fas fa-images"></i> Gallery
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h4>Modern 3BHK Apartment</h4>
+                    <p>₹8.5L • 45 Days • Salt Lake</p>
+                </div>
+            </div>
+            
+            <!-- Commercial Project 1 -->
+            <div class="portfolio-item" data-category="commercial">
+                <div class="portfolio-image">
+                    <img src="assets/images/portfolio/commercial-1.jpg" 
+                         alt="Corporate office interior design in Kolkata" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h4>Corporate Office</h4>
+                            <p>Professional workspace for 50+ employees</p>
+                            <div class="portfolio-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Park Street, Kolkata</span>
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button class="btn btn-sm btn-outline" onclick="openPortfolioModal('commercial-1')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="openImageGallery('commercial-1')">
+                                    <i class="fas fa-images"></i> Gallery
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h4>Corporate Office</h4>
+                    <p>₹15L • 60 Days • Park Street</p>
+                </div>
+            </div>
+            
+            <!-- Retail Project 1 -->
+            <div class="portfolio-item" data-category="retail">
+                <div class="portfolio-image">
+                    <img src="assets/images/portfolio/retail-1.jpg" 
+                         alt="Boutique store interior design in Kolkata" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h4>Fashion Boutique</h4>
+                            <p>Elegant retail space with custom displays</p>
+                            <div class="portfolio-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Gariahat, Kolkata</span>
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button class="btn btn-sm btn-outline" onclick="openPortfolioModal('retail-1')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="openImageGallery('retail-1')">
+                                    <i class="fas fa-images"></i> Gallery
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h4>Fashion Boutique</h4>
+                    <p>₹6L • 30 Days • Gariahat</p>
+                </div>
+            </div>
+            
+            <!-- Residential Project 2 -->
+            <div class="portfolio-item" data-category="residential renovation">
+                <div class="portfolio-image">
+                    <img src="assets/images/portfolio/renovation-1.jpg" 
+                         alt="Home renovation project in Kolkata" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h4>Complete Home Renovation</h4>
+                            <p>Traditional house transformed into modern living</p>
+                            <div class="portfolio-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Jadavpur, Kolkata</span>
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button class="btn btn-sm btn-outline" onclick="openPortfolioModal('renovation-1')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="openImageGallery('renovation-1')">
+                                    <i class="fas fa-images"></i> Gallery
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h4>Complete Home Renovation</h4>
+                    <p>₹12L • 75 Days • Jadavpur</p>
+                </div>
+            </div>
+            
+            <!-- Commercial Project 2 -->
+            <div class="portfolio-item" data-category="commercial">
+                <div class="portfolio-image">
+                    <img src="assets/images/portfolio/commercial-2.jpg" 
+                         alt="Restaurant interior design in Kolkata" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h4>Fine Dining Restaurant</h4>
+                            <p>Luxurious ambiance with Bengali cultural elements</p>
+                            <div class="portfolio-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> New Market, Kolkata</span>
+                                <span><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button class="btn btn-sm btn-outline" onclick="openPortfolioModal('commercial-2')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="openImageGallery('commercial-2')">
+                                    <i class="fas fa-images"></i> Gallery
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h4>Fine Dining Restaurant</h4>
+                    <p>₹20L • 90 Days • New Market</p>
+                </div>
+            </div>
+            
+            <!-- Residential Project 3 -->
+            <div class="portfolio-item" data-category="residential">
+                <div class="portfolio-image">
+                    <img src="assets/images/portfolio/residential-2.jpg" 
+                         alt="Luxury villa interior design in Kolkata" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h4>Luxury Villa</h4>
+                            <p>Grand interiors with custom furniture</p>
+                            <div class="portfolio-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Rajarhat, Kolkata</span>
+                                <span><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button class="btn btn-sm btn-outline" onclick="openPortfolioModal('residential-2')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="openImageGallery('residential-2')">
+                                    <i class="fas fa-images"></i> Gallery
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h4>Luxury Villa</h4>
+                    <p>₹25L • 120 Days • Rajarhat</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="text-center">
+            <button class="btn btn-outline btn-lg" id="load-more-portfolio">
+                <i class="fas fa-plus"></i>
+                Load More Projects
+            </button>
+        </div>
+        
+        <!-- Portfolio Stats -->
+        <div class="portfolio-stats">
+            <div class="row">
+                <div class="col-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>300+</h3>
+                            <p>Residential Projects</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>150+</h3>
+                            <p>Commercial Spaces</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>100+</h3>
+                            <p>Retail Outlets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Project Details</h3>
+                <button class="modal-close" onclick="closePortfolioModal()" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image Gallery Modal -->
+    <div id="gallery-modal" class="modal">
+        <div class="gallery-modal-content">
+            <button class="gallery-close" onclick="closeImageGallery()" title="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="gallery-container">
+                <button class="gallery-nav prev" onclick="previousImage()" title="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img id="gallery-image" src="" alt="Project image">
+                <button class="gallery-nav next" onclick="nextImage()" title="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-thumbnails" id="gallery-thumbnails">
+                <!-- Thumbnails will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+</section>
