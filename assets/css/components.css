@@ -590,6 +590,13 @@
   margin-top: var(--spacing-xxl);
 }
 
+.portfolio-stats .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 .stat-card {
   text-align: center;
   padding: var(--spacing-xl);
@@ -633,6 +640,18 @@
 
 .why-choose-content {
   margin-top: var(--spacing-xxl);
+}
+
+.why-choose-content .row {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-lg);
+}
+
+.why-choose-content .col-2 {
+  flex: 1 1 calc(50% - var(--spacing-lg));
+  min-width: 300px;
 }
 
 .advantage-card {
