@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - AI Interior Design Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8B4513 0%, #D4AF37 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .offline-container {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .offline-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #8B4513 0%, #D4AF37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        h1 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 8px;
+            color: #666;
+        }
+
+        .pulse {
+            width: 12px;
+            height: 12px;
+            background: #e74c3c;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #654321;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .contact-info h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .contact-item a {
+            color: #8B4513;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            📡
+        </div>
+
+        <h1>You're Offline</h1>
+
+        <p>
+            It looks like you've lost your internet connection.
+            Don't worry, some content is still available offline.
+        </p>
+
+        <div class="status">
+            <span class="pulse"></span>
+            <span>No internet connection</span>
+        </div>
+
+        <p>
+            Please check your connection and try again.
+            The page will automatically refresh when you're back online.
+        </p>
+
+        <button onclick="location.reload()" class="btn">
+            🔄 Try Again
+        </button>
+
+        <div class="contact-info">
+            <h3>Need Immediate Assistance?</h3>
+            <div class="contact-item">
+                📞 Call: <a href="tel:+919748007528">+91 9748007528</a>
+            </div>
+            <div class="contact-item">
+                💬 WhatsApp: <a href="https://wa.me/917030400093">+91 7030400093</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-reload when back online
+        window.addEventListener('online', () => {
+            console.log('Back online, reloading...');
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        });
+
+        // Check connection status
+        function updateStatus() {
+            if (navigator.onLine) {
+                location.reload();
+            }
+        }
+
+        // Check every 5 seconds
+        setInterval(updateStatus, 5000);
+    </script>
+</body>
+</html>

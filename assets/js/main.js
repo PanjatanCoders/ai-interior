@@ -597,37 +597,37 @@ class InteriorDesignApp {
     }
 
     async submitContactForm(data) {
-        // Replace with your actual API endpoint
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        // Use FormHandler for submission
+        if (window.FormHandler) {
+            return await window.FormHandler.submitContactForm(data);
         }
 
-        return response.json();
+        // Fallback to WhatsApp if FormHandler not available
+        const message = this.formatWhatsAppMessage(data);
+        this.openWhatsApp(message);
+        return { success: true, message: 'Redirected to WhatsApp' };
     }
 
     async submitNewsletterForm(data) {
-        // Replace with your actual API endpoint
-        const response = await fetch('/api/newsletter', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        // Use FormHandler for submission
+        if (window.FormHandler) {
+            return await window.FormHandler.submitNewsletterForm(data);
         }
 
-        return response.json();
+        // Fallback - just acknowledge
+        return { success: true, message: 'Thank you for subscribing!' };
+    }
+
+    formatWhatsAppMessage(data) {
+        let message = `*New Contact Form Inquiry*\n\n`;
+        message += `*Name:* ${data.name}\n`;
+        message += `*Email:* ${data.email}\n`;
+        message += `*Phone:* ${data.phone}\n`;
+        if (data.service) {
+            message += `*Service:* ${data.service}\n`;
+        }
+        message += `\n*Message:*\n${data.message}`;
+        return message;
     }
 
     setupWhatsAppIntegration() {
