@@ -1,0 +1,36 @@
+# Robots.txt for AI Interior Design Studio
+# https://aiinterior.in
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /.qodo/
+
+# Allow CSS and JS for better rendering in search results
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Sitemap location
+Sitemap: https://aiinterior.in/sitemap.xml
+
+# Crawl delay (optional - be nice to servers)
+# Crawl-delay: 1
+
+# Specific rules for different bots (optional)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /

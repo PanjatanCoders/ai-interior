@@ -808,25 +808,37 @@
 .process-timeline {
   margin-top: var(--spacing-xxl);
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow-x: auto;
 }
 
 .process-timeline::before {
   content: '';
   position: absolute;
-  top: 100px;
-  left: 60px;
-  bottom: 100px;
-  width: 2px;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 2px;
   background: var(--border-color);
   z-index: 0;
 }
 
 .process-step {
   display: flex;
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xxl);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-md);
+  margin-bottom: 0;
   position: relative;
   z-index: 1;
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
 }
 
 .step-number {
@@ -855,12 +867,14 @@
 }
 
 .step-content {
-  flex: 1;
-  padding: var(--spacing-lg);
+  width: 100%;
+  padding: var(--spacing-sm);
   background: var(--bg-primary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   transition: all var(--transition-medium);
+  max-height: 30vh;
+  overflow: hidden;
 }
 
 .step-content:hover {
@@ -870,46 +884,48 @@
 }
 
 .step-icon {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background: var(--accent-color);
   color: var(--primary-color);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xs);
 }
 
 .step-content h3 {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
   color: var(--primary-color);
+  font-size: 1rem;
 }
 
 .step-description {
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-lg);
-  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+  font-size: 0.85rem;
 }
 
 .step-features {
   list-style: none;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
 }
 
 .step-features li {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
-  font-size: 0.95rem;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.8rem;
   color: var(--text-secondary);
 }
 
 .step-features i {
   color: var(--primary-color);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .step-duration {
@@ -917,6 +933,7 @@
   align-items: center;
   gap: var(--spacing-xs);
   color: var(--primary-color);
+  font-size: 0.8rem;
   font-weight: 500;
   font-size: 0.9rem;
   padding: var(--spacing-sm) var(--spacing-md);
