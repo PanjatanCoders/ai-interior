@@ -48,6 +48,14 @@ class NavigationManager {
         this.navMenu = document.querySelector('.nav-menu');
         this.navLinks = document.querySelectorAll('.nav-link');
         this.backToTopButton = document.getElementById('back-to-top');
+
+        // Retry if elements not found
+        if (!this.backToTopButton) {
+            setTimeout(() => {
+                this.backToTopButton = document.getElementById('back-to-top');
+                if (this.backToTopButton) this.setupBackToTop();
+            }, 500);
+        }
     }
 
     setupMobileMenu() {
@@ -162,28 +170,21 @@ class NavigationManager {
     handleScroll() {
         const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Add scrolled class when scrolled down
-        if (currentScrollPosition > 50) {
-            this.header.classList.add('scrolled');
-        } else {
-            this.header.classList.remove('scrolled');
+        if (currentScrollPosition < 0) return;
+
+        // Header visibility logic
+        if (this.header) {
+            if (currentScrollPosition < this.scrollThreshold) {
+                this.header.classList.remove('hide');
+            } else if (currentScrollPosition > this.lastScrollPosition) {
+                this.header.classList.add('hide');
+            } else {
+                this.header.classList.remove('hide');
+            }
         }
 
-        // Hide/show header on scroll (optional - uncomment if needed)
-        // if (currentScrollPosition > this.lastScrollPosition && currentScrollPosition > this.scrollThreshold) {
-        //     // Scrolling down
-        //     this.header.style.transform = 'translateY(-100%)';
-        // } else {
-        //     // Scrolling up
-        //     this.header.style.transform = 'translateY(0)';
-        // }
-
         this.lastScrollPosition = currentScrollPosition;
-
-        // Update active section
         this.updateActiveSection();
-
-        // Show/hide back to top button
         this.updateBackToTopButton();
     }
 
@@ -265,16 +266,8 @@ class NavigationManager {
 
         if (scrollPosition > 300) {
             this.backToTopButton.classList.add('visible');
-            this.backToTopButton.style.display = 'flex';
-            this.backToTopButton.style.opacity = '1';
         } else {
             this.backToTopButton.classList.remove('visible');
-            this.backToTopButton.style.opacity = '0';
-            setTimeout(() => {
-                if (!this.backToTopButton.classList.contains('visible')) {
-                    this.backToTopButton.style.display = 'none';
-                }
-            }, 300);
         }
     }
 

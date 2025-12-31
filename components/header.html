@@ -1,46 +1,105 @@
 <header class="header" id="main-header">
-    <div class="container">
-        <nav class="navbar">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="#home" aria-label="Interior Design Studio Home">
-                    <i class="fas fa-home"></i>
-                    Interior Studio
-                </a>
-            </div>
-
-            <!-- Desktop Navigation Menu -->
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
-                <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
-                <li><a href="#process" class="nav-link" data-section="process">Process</a></li>
-                <li><a href="#blog" class="nav-link" data-section="blog">Blog</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-                
-                <!-- CTA Button -->
-                <li>
-                    <a href="#contact" class="btn btn-primary btn-sm">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-content">
+                <div class="header-info">
+                    <span class="info-item">
                         <i class="fas fa-phone-alt"></i>
-                        Free Consultation
+                        <a href="tel:+919748007528">+91 9748007528</a>
+                    </span>
+                    <span class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@aiinterior.in">info@aiinterior.in</a>
+                    </span>
+                    <span class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Kolkata, West Bengal
+                    </span>
+                </div>
+                <div class="header-social">
+                    <a href="https://instagram.com/interiorstudio" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                </li>
-                
-                <!-- Theme Toggle -->
-                <li>
+                    <a href="https://facebook.com/interiorstudio" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://pinterest.com/interiorstudio" target="_blank" rel="noopener" aria-label="Pinterest">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                    <a href="https://wa.me/917030400093" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-main">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#home" aria-label="AI Interior Design Studio Home">
+                        <div class="logo-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">AI Interior</span>
+                            <span class="logo-subtitle">Design Studio</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+                    <li><a href="#process" class="nav-link" data-section="process">Process</a></li>
+                    <li><a href="#blog" class="nav-link" data-section="blog">Blog</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                </ul>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon theme-icon"></i>
                     </button>
-                </li>
-            </ul>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+                    <a href="#contact" class="btn btn-primary header-cta">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Free Consultation</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </div>
 </header>
+
+<script>
+(function() {
+    let lastScroll = 0;
+    const header = document.getElementById('main-header');
+
+    window.addEventListener('scroll', function() {
+        const scroll = window.pageYOffset;
+
+        if (scroll < 100) {
+            header.classList.remove('hide');
+        } else if (scroll > lastScroll) {
+            header.classList.add('hide');
+        } else {
+            header.classList.remove('hide');
+        }
+        lastScroll = scroll;
+    });
+})();
+</script>

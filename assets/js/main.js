@@ -688,7 +688,7 @@ class InteriorDesignApp {
         this.setupStructuredData();
         
         // Breadcrumbs
-        this.setupBreadcrumbs();
+        // this.setupBreadcrumbs(); // Disabled breadcrumb navigation
     }
 
     setupDynamicMetaTags() {
@@ -748,23 +748,23 @@ class InteriorDesignApp {
         document.head.appendChild(script);
     }
 
-    setupBreadcrumbs() {
-        const breadcrumbContainer = document.createElement('nav');
-        breadcrumbContainer.setAttribute('aria-label', 'Breadcrumb');
-        breadcrumbContainer.className = 'breadcrumb';
-        breadcrumbContainer.innerHTML = `
-            <ol class="breadcrumb-list">
-                <li><a href="#home">Home</a></li>
-                <li class="current-section">Interior Design</li>
-            </ol>
-        `;
-        
-        // Insert after header
-        const header = document.querySelector('.header');
-        if (header) {
-            header.after(breadcrumbContainer);
-        }
-    }
+    // setupBreadcrumbs() {
+    //     const breadcrumbContainer = document.createElement('nav');
+    //     breadcrumbContainer.setAttribute('aria-label', 'Breadcrumb');
+    //     breadcrumbContainer.className = 'breadcrumb';
+    //     breadcrumbContainer.innerHTML = `
+    //         <ol class="breadcrumb-list">
+    //             <li><a href="#home">Home</a></li>
+    //             <li class="current-section">Interior Design</li>
+    //         </ol>
+    //     `;
+    //
+    //     // Insert after header
+    //     const header = document.querySelector('.header');
+    //     if (header) {
+    //         header.after(breadcrumbContainer);
+    //     }
+    // }
 
     setupAnalytics() {
         // Initialize Google Analytics if gtag is available

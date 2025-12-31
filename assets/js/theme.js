@@ -28,8 +28,8 @@ class ThemeManager {
     }
 
     getPreferredTheme() {
-        // Default to light theme
-        return 'light';
+        // Default to dark theme
+        return 'dark';
     }
 
     getStoredTheme() {
@@ -95,7 +95,9 @@ class ThemeManager {
         this.themeToggleButtons = document.querySelectorAll('.theme-toggle, [data-theme-toggle]');
 
         if (this.themeToggleButtons.length === 0) {
-            console.warn('No theme toggle buttons found');
+            console.warn('No theme toggle buttons found, retrying...');
+            // Retry after components load
+            setTimeout(() => this.setupThemeToggle(), 500);
             return;
         }
 
@@ -117,6 +119,7 @@ class ThemeManager {
 
         // Update button states
         this.updateToggleButtons();
+        console.log('✅ Theme toggle buttons initialized');
     }
 
     updateToggleButtons() {

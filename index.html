@@ -60,8 +60,14 @@
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme');
-            const theme = savedTheme || 'light';
+            const theme = savedTheme || 'dark';
             document.documentElement.setAttribute('data-theme', theme);
+
+            // Scroll to top on page load/refresh
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
         })();
     </script>
 
@@ -144,12 +150,52 @@
     </button>
 
     <!-- Scripts -->
-    <script src="assets/js/utils.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/form-handler.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/portfolio.js"></script>
+    <script src="assets/js/utils.js?v=20250101"></script>
+    <script src="assets/js/theme.js?v=20250101"></script>
+    <script src="assets/js/navigation.js?v=20250101"></script>
+    <script src="assets/js/animations.js?v=20250101"></script>
+    <script src="assets/js/form-handler.js?v=20250101"></script>
+    <script src="assets/js/main.js?v=20250101"></script>
+    <script src="assets/js/portfolio.js?v=20250101"></script>
+
+    <script>
+    setTimeout(function() {
+        var lastScroll = 0;
+        var btn = document.getElementById('back-to-top');
+
+        // Add click handler for back-to-top button
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        window.addEventListener('scroll', function() {
+            var scroll = window.pageYOffset;
+            var header = document.querySelector('.header');
+
+            if (header) {
+                if (scroll < 100) {
+                    header.classList.remove('hide');
+                } else if (scroll > lastScroll) {
+                    header.classList.add('hide');
+                } else {
+                    header.classList.remove('hide');
+                }
+                lastScroll = scroll;
+            }
+
+            if (btn && scroll > 300) {
+                btn.classList.add('visible');
+            } else if (btn) {
+                btn.classList.remove('visible');
+            }
+        });
+    }, 2000);
+    </script>
 </body>
 </html>
